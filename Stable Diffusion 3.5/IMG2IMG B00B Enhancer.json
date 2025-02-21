@@ -1,0 +1,1656 @@
+{
+  "last_node_id": 339,
+  "last_link_id": 718,
+  "nodes": [
+    {
+      "id": 71,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -1547.08154296875,
+        -464.7707824707031
+      ],
+      "size": [
+        337.3919982910156,
+        181.06768798828125
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 711
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            93,
+            597
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "bad quality, low quality, blurry, worst quality, low quality, painting, 3D render, drawing, crayon, sketch, graphite, impressionist, cartoon, anime, noisy, blurry, soft, deformed, ugly, lowres, low details, JPEG artifacts, airbrushed, semi-realistic, CGI, render, Blender, digital art, manga, amateur, bad face, ugly face, deformed face, long neck, bad anatomy, unproportional, bad hands, extra fingers, missing fingers, bad eyes, ugly eyes, small breasts, ugly breasts, ugly nipples, large nipples",
+        [
+          false,
+          true
+        ]
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 13,
+      "type": "ModelSamplingSD3",
+      "pos": [
+        -1163.08154296875,
+        -732.7706298828125
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 445
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            568
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingSD3"
+      },
+      "widgets_values": [
+        3
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 329,
+      "type": "easy cleanGpuUsed",
+      "pos": [
+        -825.0827026367188,
+        -529.7705688476562
+      ],
+      "size": [
+        156.77955627441406,
+        26
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "link": 695
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            696
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy cleanGpuUsed"
+      },
+      "widgets_values": [],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 70,
+      "type": "ConditioningSetTimestepRange",
+      "pos": [
+        -834.0827026367188,
+        -435.77081298828125
+      ],
+      "size": [
+        235.1999969482422,
+        82
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 93,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            92
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningSetTimestepRange"
+      },
+      "widgets_values": [
+        0,
+        0.1
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 337,
+      "type": "CLIPTextEncode",
+      "pos": [
+        3,
+        -752
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 706
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            702
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Ugly breasts, small breasts, ugly nipples, large nipples,",
+        [
+          false,
+          true
+        ]
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 336,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -220,
+        -754
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 705
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            701
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Perfect beautiful breat, perfect pink nipples, natural looking nipples",
+        [
+          false,
+          true
+        ]
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 332,
+      "type": "VAEEncode",
+      "pos": [
+        -231,
+        -450
+      ],
+      "size": [
+        461.0166320800781,
+        46
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 696
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 691
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            698
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode"
+      },
+      "widgets_values": [],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 325,
+      "type": "PreviewImage",
+      "pos": [
+        -229,
+        -352
+      ],
+      "size": [
+        480.5303955078125,
+        335.3539733886719
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 671
+        }
+      ],
+      "outputs": [],
+      "title": "Boob inspector",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": [],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        -828.0827026367188,
+        -523.7705688476562
+      ],
+      "size": [
+        211.47955322265625,
+        46
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 712
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 629
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            695,
+            714
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": [],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 322,
+      "type": "FaceDetailer",
+      "pos": [
+        757,
+        -914
+      ],
+      "size": [
+        595.5335693359375,
+        953
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 703
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 704
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 680
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 709
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 707
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 708
+        },
+        {
+          "name": "bbox_detector",
+          "type": "BBOX_DETECTOR",
+          "link": 677
+        },
+        {
+          "name": "sam_model_opt",
+          "type": "SAM_MODEL",
+          "link": 674,
+          "shape": 7
+        },
+        {
+          "name": "segm_detector_opt",
+          "type": "SEGM_DETECTOR",
+          "link": 678,
+          "shape": 7
+        },
+        {
+          "name": "detailer_hook",
+          "type": "DETAILER_HOOK",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "scheduler_func_opt",
+          "type": "SCHEDULER_FUNC",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            715
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "cropped_refined",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 6
+        },
+        {
+          "name": "cropped_enhanced_alpha",
+          "type": "IMAGE",
+          "links": [
+            671
+          ],
+          "slot_index": 2,
+          "shape": 6
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "detailer_pipe",
+          "type": "DETAILER_PIPE",
+          "links": null
+        },
+        {
+          "name": "cnet_images",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "Boob Enhancer",
+      "properties": {
+        "Node name for S&R": "FaceDetailer"
+      },
+      "widgets_values": [
+        512,
+        true,
+        1024,
+        752875364777614,
+        "randomize",
+        30,
+        4.5,
+        "dpmpp_2m",
+        "karras",
+        0.65,
+        5,
+        true,
+        true,
+        0.5,
+        10,
+        3,
+        "center-1",
+        6,
+        0.93,
+        10,
+        0.7,
+        "False",
+        10,
+        "Perfect beautiful breat, perfect pink nipples",
+        1,
+        false,
+        0,
+        false,
+        false,
+        [
+          false,
+          true
+        ]
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 69,
+      "type": "ConditioningCombine",
+      "pos": [
+        -590.2136840820312,
+        -508.5110778808594
+      ],
+      "size": [
+        228.39999389648438,
+        120.41853332519531
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 91
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 92
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            604
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningCombine"
+      },
+      "widgets_values": [],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 67,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        -585.2136840820312,
+        -350.510986328125
+      ],
+      "size": [
+        235.6387481689453,
+        92.20853424072266
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 597
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            90
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningZeroOut"
+      },
+      "widgets_values": [],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 68,
+      "type": "ConditioningSetTimestepRange",
+      "pos": [
+        -837.2136840820312,
+        -316.5108337402344
+      ],
+      "size": [
+        235.1999969482422,
+        82
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 90
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            91
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningSetTimestepRange"
+      },
+      "widgets_values": [
+        0.1,
+        1
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 11,
+      "type": "TripleCLIPLoader",
+      "pos": [
+        -1533.08154296875,
+        -897.7706298828125
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            710,
+            711
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TripleCLIPLoader"
+      },
+      "widgets_values": [
+        "G clip\\clip_g_sdxl_base.safetensors",
+        "L clip\\ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors",
+        "t5-xxl\\t5xxl_fp16.safetensors"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 302,
+      "type": "CLIPTextEncodeSD3",
+      "pos": [
+        -1171.08154296875,
+        -610.7703857421875
+      ],
+      "size": [
+        318.92523193359375,
+        336.7307434082031
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 710
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            608
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeSD3"
+      },
+      "widgets_values": [
+        "natural_breasts, natural_tits, natbrs. Perfect anatomy, perfect breasts, medium breasts, perfect small nipples, small areolas, pefect well-formed breasts, pefect soft tits, pefect heavy tits",
+        "natural_breasts, natural_tits, natbrs. Perfect anatomy, perfect breasts, medium breasts, perfect small nipples, small areolas, pefect well-formed breasts, pefect soft tits, pefect heavy tits",
+        "natural_breasts, natural_tits, natbrs. Perfect anatomy, perfect breasts, medium breasts, perfect small nipples, small areolas, pefect well-formed breasts, pefect soft tits, pefect heavy tits",
+        "none",
+        [
+          false,
+          true
+        ],
+        [
+          false,
+          true
+        ],
+        [
+          false,
+          true
+        ]
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 330,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -236,
+        -891
+      ],
+      "size": [
+        461.1307067871094,
+        98
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            700
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            680,
+            705,
+            706
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            691,
+            699
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "SDXL\\polyhedronSDXL_nsfwV2SD3CLIP.safetensors"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -1540.08154296875,
+        -629.7702026367188
+      ],
+      "size": [
+        329.9215393066406,
+        98
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            445
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [],
+          "slot_index": 2,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "SD 3.5\\sd3.5_large_turbo.safetensors"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 303,
+      "type": "VAELoader",
+      "pos": [
+        -1532.08154296875,
+        -739.7706298828125
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            629,
+            717
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "sd 3,5\\SD_3.5_VAE.safetensors"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 328,
+      "type": "SAMLoader",
+      "pos": [
+        -227,
+        -578
+      ],
+      "size": [
+        463.5746154785156,
+        82
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAM_MODEL",
+          "type": "SAM_MODEL",
+          "links": [
+            674
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SAMLoader"
+      },
+      "widgets_values": [
+        "sam_vit_b_01ec64.pth",
+        "AUTO"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 321,
+      "type": "UltralyticsDetectorProvider",
+      "pos": [
+        -219,
+        -702
+      ],
+      "size": [
+        449.132568359375,
+        78
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BBOX_DETECTOR",
+          "type": "BBOX_DETECTOR",
+          "links": [
+            677
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "SEGM_DETECTOR",
+          "type": "SEGM_DETECTOR",
+          "links": [
+            678
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltralyticsDetectorProvider"
+      },
+      "widgets_values": [
+        "bbox/nipple.pt"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 294,
+      "type": "KSampler",
+      "pos": [
+        -810.0827026367188,
+        -908.7706298828125
+      ],
+      "size": [
+        460.779541015625,
+        350.46649169921875
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 568
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 608
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 604
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 718
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            712
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        228994705530920,
+        "randomize",
+        6,
+        1,
+        "euler",
+        "beta",
+        0.2
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 335,
+      "type": "KSampler (Efficient)",
+      "pos": [
+        280,
+        -906
+      ],
+      "size": [
+        440.0423889160156,
+        892.2821655273438
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 700
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 701
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 702
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 698
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 699,
+          "shape": 7
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            704
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": [
+            707
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": [
+            708
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": null
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            709
+          ],
+          "slot_index": 4
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            703
+          ],
+          "slot_index": 5
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (Efficient)"
+      },
+      "widgets_values": [
+        159919913954416,
+        null,
+        15,
+        5,
+        "dpmpp_2m",
+        "karras",
+        0.15,
+        "none",
+        "true"
+      ],
+      "color": "#233",
+      "bgcolor": "#355",
+      "shape": 1
+    },
+    {
+      "id": 324,
+      "type": "SaveImage",
+      "pos": [
+        -1470.418212890625,
+        -113.09931945800781
+      ],
+      "size": [
+        442.8493347167969,
+        618.2214965820312
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 714
+        }
+      ],
+      "outputs": [],
+      "title": "Before boob job",
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "shuttle/testing/fixed/RAW"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 301,
+      "type": "SaveImage",
+      "pos": [
+        -925.78076171875,
+        -109.7073974609375
+      ],
+      "size": [
+        444.1367492675781,
+        611.239990234375
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 715
+        }
+      ],
+      "outputs": [],
+      "title": "After boob job",
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "shuttle/testing/fixed/fixed_"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 339,
+      "type": "VAEEncode",
+      "pos": [
+        -1147.2236328125,
+        -847.649658203125
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 716
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 717
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            718
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode"
+      },
+      "widgets_values": [],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 338,
+      "type": "LoadImage",
+      "pos": [
+        -2093.388427734375,
+        -963.2900390625
+      ],
+      "size": [
+        518.8355102539062,
+        770.3446655273438
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            716
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "girl__00020_.png",
+        "image"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    }
+  ],
+  "links": [
+    [
+      90,
+      67,
+      0,
+      68,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      91,
+      68,
+      0,
+      69,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      92,
+      70,
+      0,
+      69,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      93,
+      71,
+      0,
+      70,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      445,
+      4,
+      0,
+      13,
+      0,
+      "MODEL"
+    ],
+    [
+      568,
+      13,
+      0,
+      294,
+      0,
+      "MODEL"
+    ],
+    [
+      597,
+      71,
+      0,
+      67,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      604,
+      69,
+      0,
+      294,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      608,
+      302,
+      0,
+      294,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      629,
+      303,
+      0,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      671,
+      322,
+      2,
+      325,
+      0,
+      "IMAGE"
+    ],
+    [
+      674,
+      328,
+      0,
+      322,
+      7,
+      "SAM_MODEL"
+    ],
+    [
+      677,
+      321,
+      0,
+      322,
+      6,
+      "BBOX_DETECTOR"
+    ],
+    [
+      678,
+      321,
+      1,
+      322,
+      8,
+      "SEGM_DETECTOR"
+    ],
+    [
+      680,
+      330,
+      1,
+      322,
+      2,
+      "CLIP"
+    ],
+    [
+      691,
+      330,
+      2,
+      332,
+      1,
+      "VAE"
+    ],
+    [
+      695,
+      8,
+      0,
+      329,
+      0,
+      "*"
+    ],
+    [
+      696,
+      329,
+      0,
+      332,
+      0,
+      "IMAGE"
+    ],
+    [
+      698,
+      332,
+      0,
+      335,
+      3,
+      "LATENT"
+    ],
+    [
+      699,
+      330,
+      2,
+      335,
+      4,
+      "VAE"
+    ],
+    [
+      700,
+      330,
+      0,
+      335,
+      0,
+      "MODEL"
+    ],
+    [
+      701,
+      336,
+      0,
+      335,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      702,
+      337,
+      0,
+      335,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      703,
+      335,
+      5,
+      322,
+      0,
+      "IMAGE"
+    ],
+    [
+      704,
+      335,
+      0,
+      322,
+      1,
+      "MODEL"
+    ],
+    [
+      705,
+      330,
+      1,
+      336,
+      0,
+      "CLIP"
+    ],
+    [
+      706,
+      330,
+      1,
+      337,
+      0,
+      "CLIP"
+    ],
+    [
+      707,
+      335,
+      1,
+      322,
+      4,
+      "CONDITIONING"
+    ],
+    [
+      708,
+      335,
+      2,
+      322,
+      5,
+      "CONDITIONING"
+    ],
+    [
+      709,
+      335,
+      4,
+      322,
+      3,
+      "VAE"
+    ],
+    [
+      710,
+      11,
+      0,
+      302,
+      0,
+      "CLIP"
+    ],
+    [
+      711,
+      11,
+      0,
+      71,
+      0,
+      "CLIP"
+    ],
+    [
+      712,
+      294,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      714,
+      8,
+      0,
+      324,
+      0,
+      "IMAGE"
+    ],
+    [
+      715,
+      322,
+      0,
+      301,
+      0,
+      "IMAGE"
+    ],
+    [
+      716,
+      338,
+      0,
+      339,
+      0,
+      "IMAGE"
+    ],
+    [
+      717,
+      303,
+      0,
+      339,
+      1,
+      "VAE"
+    ],
+    [
+      718,
+      339,
+      0,
+      294,
+      3,
+      "LATENT"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Before/After Boob job",
+      "bounding": [
+        -1547,
+        -188,
+        1213,
+        704
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "SDXL",
+      "bounding": [
+        -246,
+        -988,
+        1609,
+        984
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "SD 3.5",
+      "bounding": [
+        -1557,
+        -983,
+        1218,
+        758
+      ],
+      "color": "#8A8",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.4950000000000033,
+      "offset": [
+        3096.1262388754726,
+        1388.4767034045465
+      ]
+    },
+    "ue_links": [],
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0
+  },
+  "version": 0.4
+}

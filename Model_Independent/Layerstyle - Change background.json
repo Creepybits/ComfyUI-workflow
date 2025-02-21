@@ -1,0 +1,461 @@
+{
+  "last_node_id": 39,
+  "last_link_id": 73,
+  "nodes": [
+    {
+      "id": 29,
+      "type": "LayerMask: RemBgUltra",
+      "pos": [
+        1015,
+        1606
+      ],
+      "size": [
+        315,
+        150
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 64
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": null
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "shape": 3,
+          "links": [
+            50,
+            61,
+            69
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LayerMask: RemBgUltra"
+      },
+      "widgets_values": [
+        10,
+        0.01,
+        0.99,
+        true
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 35,
+      "type": "Reroute",
+      "pos": [
+        1021,
+        1460
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            64,
+            68
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 37,
+      "type": "LayerMask: PixelSpread",
+      "pos": [
+        1024,
+        1466
+      ],
+      "size": [
+        315,
+        102
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 68
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "shape": 7,
+          "link": 69
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": [
+            70
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LayerMask: PixelSpread"
+      },
+      "widgets_values": [
+        false,
+        0
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 16,
+      "type": "LoadImage",
+      "pos": [
+        722,
+        1346
+      ],
+      "size": [
+        275.00897216796875,
+        402.823486328125
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": [
+            58
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "shape": 3,
+          "links": null
+        }
+      ],
+      "title": "Load background",
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "forest.png",
+        "image"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        420,
+        1334
+      ],
+      "size": [
+        285.653076171875,
+        422.14398193359375
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": [
+            62
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "shape": 3,
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "woman.png",
+        "image"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 34,
+      "type": "LayerMask: MaskPreview",
+      "pos": [
+        2139,
+        1315
+      ],
+      "size": [
+        338.21405029296875,
+        423.57476806640625
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 61
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "LayerMask: MaskPreview"
+      },
+      "widgets_values": [],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 15,
+      "type": "LayerUtility: ImageBlendAdvance",
+      "pos": [
+        1367,
+        1448
+      ],
+      "size": [
+        315,
+        338
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "background_image",
+          "type": "IMAGE",
+          "link": 58
+        },
+        {
+          "name": "layer_image",
+          "type": "IMAGE",
+          "link": 70
+        },
+        {
+          "name": "layer_mask",
+          "type": "MASK",
+          "shape": 7,
+          "link": 50
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": [
+            72
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "shape": 3,
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LayerUtility: ImageBlendAdvance"
+      },
+      "widgets_values": [
+        false,
+        "normal",
+        100,
+        50,
+        65,
+        "None",
+        0.6,
+        1,
+        0,
+        "lanczos",
+        0
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 38,
+      "type": "SaveImage",
+      "pos": [
+        1738,
+        1317
+      ],
+      "size": [
+        355.619873046875,
+        423.03887939453125
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 72
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    }
+  ],
+  "links": [
+    [
+      50,
+      29,
+      1,
+      15,
+      2,
+      "MASK"
+    ],
+    [
+      58,
+      16,
+      0,
+      15,
+      0,
+      "IMAGE"
+    ],
+    [
+      61,
+      29,
+      1,
+      34,
+      0,
+      "MASK"
+    ],
+    [
+      62,
+      2,
+      0,
+      35,
+      0,
+      "*"
+    ],
+    [
+      64,
+      35,
+      0,
+      29,
+      0,
+      "IMAGE"
+    ],
+    [
+      68,
+      35,
+      0,
+      37,
+      0,
+      "IMAGE"
+    ],
+    [
+      69,
+      29,
+      1,
+      37,
+      1,
+      "MASK"
+    ],
+    [
+      70,
+      37,
+      0,
+      15,
+      1,
+      "IMAGE"
+    ],
+    [
+      72,
+      15,
+      0,
+      38,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Add IMG to Background",
+      "bounding": [
+        390,
+        1226,
+        2112,
+        568
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7972024500000005,
+      "offset": [
+        -312.445987717465,
+        -1009.4395345154317
+      ]
+    },
+    "ue_links": [],
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

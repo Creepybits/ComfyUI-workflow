@@ -1,0 +1,672 @@
+{
+  "last_node_id": 23,
+  "last_link_id": 40,
+  "nodes": [
+    {
+      "id": 23,
+      "type": "VAELoader",
+      "pos": [
+        100,
+        130
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "shape": 3,
+          "links": [
+            40
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "Flux\\flux1DevVAE.safetensors"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 22,
+      "type": "DualCLIPLoader",
+      "pos": [
+        100,
+        318
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "shape": 3,
+          "links": [
+            39
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoader"
+      },
+      "widgets_values": [
+        "t5xxl_fp16.safetensors",
+        "clip_l.safetensors",
+        "flux",
+        "default"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 18,
+      "type": "TextEncodeForSamplerParams+",
+      "pos": [
+        515,
+        130
+      ],
+      "size": [
+        330,
+        190
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 39
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "shape": 3,
+          "links": [
+            34
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextEncodeForSamplerParams+"
+      },
+      "widgets_values": [
+        "Masterpiece, extreme quality, sharp focus, professional, extremely beautiful eyes, extremely detailed eyes, perfect voluptuous breasts, perfect detailed small pink nipples, 32k HD, octane rendering. In a surreal and captivating scene, a woman stands confidently amidst an ethereal, dimly lit space, her skin a living canvas adorned with intricate tattoos that swirl and dance across her body like an elaborate tapestry. Each tattoo is a masterpiece of detail, showcasing vibrant colors that ebb and flow, from deep indigos and fiery reds to soft pastels, glistening subtly under the soft glow of ambient light. The air is thick with an enchanting fragrance of sandalwood and jasmine, evoking a feeling of mystique.\\n\\nHer hair, a cascade of lustrous raven locks, falls freely around her shoulders, framing her face which radiates both strength and vulnerability. With piercing emerald eyes that hold stories of their own, she gazes into the distance, her expression reflecting a serene confidence mixed with defiance. The tattoos tell tales of journeys and dreams, their textures ranging from smooth, almost silk-like skin to raised, tactile patterns that seem to pulsate with energy.\\n\\nAround her, shadows flicker, creating an aura of mystery as softly falling petals from cherry blossoms drift through the air, caught in the gentle breeze that whispers secrets. The sound of distant drums beats steadily, filling the atmosphere with an underlying rhythm that resonates with her heartbeat, as if the very essence of life is celebrating her existence. In this dreamlike moment, she embodies both art and spirit, a living embodiment of stories untold"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 20,
+      "type": "workflow>FluxSampler",
+      "pos": [
+        945,
+        130
+      ],
+      "size": [
+        310,
+        320
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 38
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 34
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 35
+        },
+        {
+          "name": "loras",
+          "type": "LORA_PARAMS",
+          "link": 36
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 40
+        }
+      ],
+      "outputs": [
+        {
+          "name": "params",
+          "type": "SAMPLER_PARAMS",
+          "shape": 3,
+          "links": [
+            31
+          ]
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": [
+            32
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "workflow/FluxSampler"
+      },
+      "widgets_values": [
+        "1454454654",
+        "euler",
+        "ddim_uniform",
+        "20",
+        "3.5",
+        "1.5",
+        "0.5",
+        "1.0"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 12,
+      "type": "LorasForFluxParams+",
+      "pos": [
+        100,
+        554
+      ],
+      "size": [
+        290,
+        110
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LORA_PARAMS",
+          "type": "LORA_PARAMS",
+          "shape": 3,
+          "links": [
+            36
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LorasForFluxParams+"
+      },
+      "widgets_values": [
+        "zil flux\\Zilaria_Flux.safetensors",
+        "0.7, 0.8, 0.9, 1.0, 1.1"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 14,
+      "type": "PlotParameters+",
+      "pos": [
+        1355,
+        130
+      ],
+      "size": [
+        330,
+        174
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 32
+        },
+        {
+          "name": "params",
+          "type": "SAMPLER_PARAMS",
+          "link": 31
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "shape": 3,
+          "links": [
+            15
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PlotParameters+"
+      },
+      "widgets_values": [
+        "lora_strength",
+        "lora_strength",
+        3,
+        "true",
+        "changes only"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 8,
+      "type": "SDXLEmptyLatentSizePicker+",
+      "pos": [
+        100,
+        794
+      ],
+      "size": [
+        280,
+        170
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "shape": 3,
+          "links": [
+            35
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "shape": 3,
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "shape": 3,
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SDXLEmptyLatentSizePicker+"
+      },
+      "widgets_values": [
+        "1024x1024 (1.0)",
+        1,
+        0,
+        0
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 10,
+      "type": "PreviewImage",
+      "pos": [
+        1785,
+        130
+      ],
+      "size": [
+        390,
+        700
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 15
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": [],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 21,
+      "type": "UNETLoader",
+      "pos": [
+        100,
+        1094
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "shape": 3,
+          "links": [
+            38
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "flux_dev.safetensors",
+        "default"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    }
+  ],
+  "links": [
+    [
+      15,
+      14,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      31,
+      20,
+      0,
+      14,
+      1,
+      "SAMPLER_PARAMS"
+    ],
+    [
+      32,
+      20,
+      1,
+      14,
+      0,
+      "IMAGE"
+    ],
+    [
+      34,
+      18,
+      0,
+      20,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      35,
+      8,
+      0,
+      20,
+      2,
+      "LATENT"
+    ],
+    [
+      36,
+      12,
+      0,
+      20,
+      3,
+      "LORA_PARAMS"
+    ],
+    [
+      38,
+      21,
+      0,
+      20,
+      0,
+      "MODEL"
+    ],
+    [
+      39,
+      22,
+      0,
+      18,
+      0,
+      "CLIP"
+    ],
+    [
+      40,
+      23,
+      0,
+      20,
+      4,
+      "VAE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6588450000000005,
+      "offset": [
+        401.44232462661506,
+        -5.08210327064655
+      ]
+    },
+    "groupNodes": {
+      "FluxSampler": {
+        "nodes": [
+          {
+            "id": -1,
+            "type": "FluxSamplerParams+",
+            "pos": {
+              "0": 80,
+              "1": -40
+            },
+            "size": {
+              "0": 327.5999755859375,
+              "1": 286
+            },
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "model",
+                "type": "MODEL",
+                "link": null,
+                "localized_name": "model"
+              },
+              {
+                "name": "conditioning",
+                "type": "CONDITIONING",
+                "link": null,
+                "localized_name": "conditioning"
+              },
+              {
+                "name": "latent_image",
+                "type": "LATENT",
+                "link": null,
+                "localized_name": "latent_image"
+              },
+              {
+                "name": "loras",
+                "type": "LORA_PARAMS",
+                "link": null,
+                "shape": 7,
+                "localized_name": "loras"
+              }
+            ],
+            "outputs": [
+              {
+                "name": "latent",
+                "type": "LATENT",
+                "links": [],
+                "shape": 3,
+                "slot_index": 0,
+                "localized_name": "latent"
+              },
+              {
+                "name": "params",
+                "type": "SAMPLER_PARAMS",
+                "links": [],
+                "shape": 3,
+                "slot_index": 1,
+                "localized_name": "params"
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "FluxSamplerParams+"
+            },
+            "widgets_values": [
+              "?",
+              "euler",
+              "ddim_uniform",
+              "8",
+              "3.5",
+              "1.5,2.0",
+              "0.5",
+              "1.0"
+            ],
+            "index": 0
+          },
+          {
+            "id": -1,
+            "type": "VAEDecode",
+            "pos": {
+              "0": 550,
+              "1": 40
+            },
+            "size": {
+              "0": 210,
+              "1": 46
+            },
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "samples",
+                "type": "LATENT",
+                "link": null,
+                "localized_name": "samples"
+              },
+              {
+                "name": "vae",
+                "type": "VAE",
+                "link": null,
+                "localized_name": "vae"
+              }
+            ],
+            "outputs": [
+              {
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [],
+                "shape": 3,
+                "slot_index": 0,
+                "localized_name": "IMAGE"
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAEDecode"
+            },
+            "index": 1
+          }
+        ],
+        "links": [
+          [
+            null,
+            2,
+            0,
+            0,
+            19,
+            "MODEL"
+          ],
+          [
+            null,
+            0,
+            0,
+            1,
+            18,
+            "CONDITIONING"
+          ],
+          [
+            null,
+            0,
+            0,
+            2,
+            8,
+            "LATENT"
+          ],
+          [
+            null,
+            0,
+            0,
+            3,
+            12,
+            "LORA_PARAMS"
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            6,
+            "LATENT"
+          ],
+          [
+            null,
+            1,
+            1,
+            1,
+            19,
+            "VAE"
+          ]
+        ],
+        "external": [
+          [
+            0,
+            1,
+            "SAMPLER_PARAMS"
+          ],
+          [
+            1,
+            0,
+            "IMAGE"
+          ]
+        ]
+      }
+    },
+    "ue_links": [],
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
